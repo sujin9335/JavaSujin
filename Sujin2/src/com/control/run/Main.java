@@ -10,7 +10,11 @@ public class Main {
 //		new Controller().checkAgeEnroll();
 //		new Controller().printMessage();
 //		new Controller().caseTest();
-		new Controller().ex_test();
+//		new Controller().ex_test();
+//		new Controller().checkStrLower();
+//		new Controller().checkStrNumber();
+		new Controller().startprint();
+		
 		
 		
 		

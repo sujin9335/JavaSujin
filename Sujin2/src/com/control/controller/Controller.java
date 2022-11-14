@@ -216,8 +216,105 @@ public class Controller {
 		//있으면 회원가입 내용을 출력 이름, 주소 저장후 출력
 		//없으면 회원가입이 불가능합니다 출력
 		//외국인 등록번호여부를 잘못누른경우 잘못누르셨습니다 출력 후 프로그램 종료	
+		Scanner sc=new Scanner(System.in);
 		
 		
+		String nation, nameAddr, name, addr;
+		nameAddr="";
+		System.out.print("성인입니까? (네/아니요): ");
+		String age1=sc.next();
+		if(age1.equals("네")) {
+			System.out.print("내국인/외국인");
+			nation=sc.next();
+			switch(nation) {
+				case "내국인" : 
+					sc.nextLine();
+					System.out.print("이름 : ");
+					name=sc.nextLine();
+					nameAddr+=name;
+					System.out.print("주소 : ");
+					addr=sc.nextLine();
+					System.out.println();
+					nameAddr+=addr;
+					System.out.println(nameAddr);
+					break;
+				case "외국인" :
+					System.out.println("외국인 등록번호 있습니까? (있다/없다)");
+					String fnum=sc.next();
+					if(fnum.equals("있다")){
+						sc.nextLine();
+						System.out.print("이름 : ");
+						name=sc.nextLine();				
+						System.out.print("주소 : ");
+						addr=sc.nextLine();
+						System.out.println();						
+						System.out.println(name+" "+addr);
+					}else if(fnum.equals("없다")) {
+						System.out.println("회원가입이 불가능합니다");
+					}else {
+						System.out.println("잘못 누르셨습니다");
+					}
+			}
+				
+		}else if(age1.equals("아니요")) {
+			System.out.println("회원가입불가합니다");
+		}else {
+			System.out.println("(네/아니요)로 입력해주세요");
+		}
+	
+	}
+	public void checkStrLower() {
+		//1. 입력받은 문자에 소문자가 있는지 확인해주는 기능 구현하기
+		//추가 소문자가 뭐가 있는지 확인하고 소문자 갯수가 2개 이상일경우 1개만 출력 ex(소문자가 s가 3개 있습니다)
+		Scanner sc=new Scanner(System.in);
+		
+		String smallMsg="";
+		int count=0;
+		System.out.print("입력 : ");
+		String msg=sc.nextLine();
+		
+		for(int i=0; i<msg.length(); i++) {
+			char msgch=msg.charAt(i);
+			if(msgch>='a'&&msgch<='z') {
+				smallMsg+=msgch;
+				count++;
+			}
+		}
+		System.out.println(count>0 ? "소문자가 "+count+"개 있습니다"+smallMsg : "소문자가 없습니다");
+		
+		
+	}
+	public void checkStrNumber() {
+		//입력받은 문자에 숫자가 있는지 확인하고 있는 수를 출력해주는 기능 구현하기
+		Scanner sc=new Scanner(System.in);
+		
+		String smallMsg="";
+		int count=0;
+		System.out.print("입력 : ");
+		String msg=sc.nextLine();
+		
+		for(int i=0; i<msg.length(); i++) {
+			char msgch=msg.charAt(i);
+			if(msgch>='0'&&msgch<='9') {
+				smallMsg+=msgch;
+				count++;
+			}
+		}
+		System.out.println(count>0 ? "숫자가 "+count+"개 있습니다"+smallMsg : "숫자가 없습니다");
+	}
+	public void startprint(){
+		//*****
+		//****
+		//***
+		//**
+		//*
+		
+		for(int i=0; i<5; i++) {
+			for(int j=0; j<(5-i); j++) {
+				System.out.print("*");
+			}
+			System.out.println();
+		}
 		
 	}
 }
