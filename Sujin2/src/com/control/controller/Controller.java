@@ -479,6 +479,10 @@ public class Controller {
 		int input10=sc.nextInt();
 		System.out.print("숫자를 입력하시오: ");
 		int input1=sc.nextInt();
+//		int input100 = 1; // 임의값 확인용
+//		int input10 = 2; // 임의값 확인용
+//		int input1 = 1; // 임의값 확인용
+//		int random = 211; // 임의값 확인용
 		
 		int random1=random%10;		
 		int random10=random%100/10;		
@@ -489,14 +493,25 @@ public class Controller {
 		
 		if(input1==random1) {
 			strike++;
+			if(input1==random10||input1==random100) {
+				ball--; //중복 ball 값 처리 
+				
+			}
 		}
 		if(input10==random10) {
 			strike++;
+			if(input10==random1||input10==random100) {
+				ball--; //중복 ball 값 처리 
+				
+			}
 		}
 		if(input100==random100) {
 			strike++;
+			if(input100==random10||input100==random1) {
+				ball--; //중복 ball 값 처리 
+				
+			}
 		}
-		
 		if(input1==random10||input1==random100) {
 			ball++;
 			System.out.println(ball);
