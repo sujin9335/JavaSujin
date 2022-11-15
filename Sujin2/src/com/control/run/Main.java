@@ -13,7 +13,9 @@ public class Main {
 //		new Controller().ex_test();
 //		new Controller().checkStrLower();
 //		new Controller().checkStrNumber();
-		new Controller().startprint();
+//		new Controller().startprint();
+//		new Controller().RpsGame();
+		new Controller().bbGame();
 		
 		
 		

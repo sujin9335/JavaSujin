@@ -317,4 +317,207 @@ public class Controller {
 		}
 		
 	}
+	public void RpsGame() {
+//		1. 가위바위보게임
+//		 설명 
+//		 - 사용자에게 가위, 바위, 보 중 한개를 입력하도록하고(입력방식은 숫자)
+//		 - 컴퓨터가 랜덤값으로 세개중 하나의 데이터를 대입
+//		 - 컴퓨터의 값과 사용자의 값을 비교하여 다음의 결과출력
+//		   같으면 비겼습니다. 출력 후 다시 사용자와 컴퓨터가 선택할 수 있도록 로직구성
+//		   컴퓨터가 사용자에게 이기면 컴퓨터가 이겼습니다. 출력
+//		   사용자가 컴퓨터에게 이기면 사용자가 있겼습니다. 출력   
+//
+//		-  승자가 나왔으면 다시 하겠습니다 출력 
+//		    다시하면 위에 로직 다시 실행
+//		    종료하면 프로그램 종료
+//		- 추가 : 만일 위내용을 쉽게 처리 했으면 프로그램 종료시 지금까지 전적을 출력
+//		       컴퓨터 승 00번, 사용자 승 00번
+		
+		Scanner sc=new Scanner(System.in);
+		
+		
+		
+		
+		int comTotal=0;
+		int adminTotal=0;
+		char start='y'; 
+		
+		while(start=='y') {
+			System.out.print("가위(1) 바위(2) 보(3) 숫자입력 : ");
+			int admin=sc.nextInt();
+			int com=(int)((Math.random()*3)+1);
+			
+			switch(admin) {
+				case 1 : 
+					if(com==1) {
+						System.out.println("비겼습니다");
+						System.out.println("다시 하겠습니까?(y/n) : ");
+						start=sc.next().charAt(0);
+						while(start!='y'&&start!='n') {
+							System.out.println("y/n을 입력해주세요: ");
+							start=sc.next().charAt(0);
+						}
+					}else if(com==2) {
+						System.out.println("컴퓨터가 이겼습니다");
+						System.out.println("다시 하겠습니까?(y/n) : ");
+						start=sc.next().charAt(0);
+						while(start!='y'&&start!='n') {
+							System.out.println("y/n을 입력해주세요: ");
+							start=sc.next().charAt(0);
+						}
+						comTotal++;
+					}else if(com==3) {
+						System.out.println("사용자가 이겼습니다");
+						System.out.println("다시 하겠습니까?(y/n) : ");
+						start=sc.next().charAt(0);
+						while(start!='y'&&start!='n') {
+							System.out.println("y/n을 입력해주세요: ");
+							start=sc.next().charAt(0);
+						}
+						adminTotal++;
+					}break;
+				case 2 : 
+					if(com==2) {
+						System.out.println("비겼습니다");
+						System.out.println("다시 하겠습니까?(y/n) : ");
+						start=sc.next().charAt(0);
+						while(start!='y'&&start!='n') {
+							System.out.println("y/n을 입력해주세요: ");
+							start=sc.next().charAt(0);
+						}
+					}else if(com==3) {
+						System.out.println("컴퓨터가 이겼습니다");
+						System.out.println("다시 하겠습니까?(y/n) : ");
+						start=sc.next().charAt(0);
+						while(start!='y'&&start!='n') {
+							System.out.println("y/n을 입력해주세요: ");
+							start=sc.next().charAt(0);
+						}
+						comTotal++;
+					}else if(com==1) {
+						System.out.println("사용자가 이겼습니다");
+						System.out.println("다시 하겠습니까?(y/n) : ");
+						start=sc.next().charAt(0);
+						while(start!='y'&&start!='n') {
+							System.out.println("y/n을 입력해주세요: ");
+							start=sc.next().charAt(0);
+						}
+						adminTotal++;
+					}break;	
+				case 3 : 
+					if(com==3) {
+						System.out.println("비겼습니다");
+						System.out.println("다시 하겠습니까?(y/n) : ");
+						start=sc.next().charAt(0);
+						while(start!='y'&&start!='n') {
+							System.out.println("y/n을 입력해주세요: ");
+							start=sc.next().charAt(0);
+						}
+					}else if(com==1) {
+						System.out.println("컴퓨터가 이겼습니다");
+						System.out.println("다시 하겠습니까?(y/n) : ");
+						start=sc.next().charAt(0);
+						while(start!='y'&&start!='n') {
+							System.out.println("y/n을 입력해주세요: ");
+							start=sc.next().charAt(0);
+						}
+						comTotal++;
+					}else if(com==2) {
+						System.out.println("사용자가 이겼습니다");
+						System.out.println("다시 하겠습니까?(y/n) : ");
+						start=sc.next().charAt(0);
+						while(start!='y'&&start!='n') {
+							System.out.println("y/n을 입력해주세요: ");
+							start=sc.next().charAt(0);
+						}
+						adminTotal++;
+					}break;
+				default : 
+					System.out.println("1, 2, 3 중 골라주세요");
+					start='y';
+					
+				}
+			}
+		System.out.println("컴퓨터 승 "+comTotal+", 사용자 승 "+adminTotal);
+		
+			
+	}
+	public void bbGame() {
+//		야구게임
+//		- 랜덤으로 세개의 수를 각 자리 수에 저장 * 정답값
+//		- 사용자가 임의의 수 3개를 입력받음
+//		- 정답값이랑 비교하여 
+//		   사용자가 입력한 숫자가 정답과 자리수와 숫자가 일치하면 -> 스트라이크,
+//		   사용자가 입력한 숫자가 정답과 일치하고 자리수가 맞지 않으면 -> 볼,
+//		   사용자가 입력한 숫자가 일치한게 하나도 없으면 -> 파울으로 처리
+//
+//		- 정답을 맞출때까지 입력이 반복되야함.
+//
+//		예 ) ==== 야구게임시작 ==== 
+//		     답 : 345
+//		     입력 : 311 -> 1 스트라이크
+//		     입력 : 354 -> 1스트라이크 2볼
+//		     입력 : 344 -> 2스트라이크
+//		     입력 : 534 -> 3볼
+//		     입력 : 890 -> 파울
+//		     입력 : 345 -> 3스크라이크 정답
+//		     게임한판 더?  
+//		- 정답을 맞추면 게임을 더 할지 확인후 계속진행은 위 로직 반복
+//		  그만하면 프로그램종료
+		
+		Scanner sc=new Scanner(System.in);
+		
+		int strike=0;
+		int ball;
+		
+		while(strike!=3) {
+		int random=((int)(Math.random()*1000));
+		System.out.println(random);//랜덤값 미리확인용
+		System.out.print("숫자를 입력하시오: ");
+		int input100=sc.nextInt();
+		System.out.print("숫자를 입력하시오: ");
+		int input10=sc.nextInt();
+		System.out.print("숫자를 입력하시오: ");
+		int input1=sc.nextInt();
+		
+		int random1=random%10;		
+		int random10=random%100/10;		
+		int random100=random%1000/100;
+				
+		strike=0;
+		ball=0;
+		
+		if(input1==random1) {
+			strike++;
+		}
+		if(input10==random10) {
+			strike++;
+		}
+		if(input100==random100) {
+			strike++;
+		}
+		
+		if(input1==random10||input1==random100) {
+			ball++;
+			System.out.println(ball);
+		}
+		if(input10==random1||input10==random100) {
+			ball++;
+			System.out.println(ball);
+		}
+		if(input100==random10||input100==random1) {
+			ball++;
+			System.out.println(ball);
+		}
+		
+		System.out.println("랜덤"+random);
+		System.out.println("입력"+input100+input10+input1);
+		
+		System.out.println(ball);
+		System.out.println(strike);
+		System.out.println(strike==0&&ball==0 ? "파울" : "결과 : "+strike+"스트라이크 "+ball+"볼");
+		
+		
+		}
+	}
 }
