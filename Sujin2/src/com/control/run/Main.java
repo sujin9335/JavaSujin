@@ -1,21 +1,22 @@
 package com.control.run;
 import com.control.controller.Controller;
+import com.control.controller.Controller2;
 public class Main {
 	public static void main(String[] args) {
-//		new Controller().calcGrade();
-//		new Controller().inputMsgPrint();
-//		new Controller().calcInputNum();
-//		new Controller().checkNumber();
-//		new Controller().amdinCheck();
-//		new Controller().checkAgeEnroll();
-//		new Controller().printMessage();
-//		new Controller().caseTest();
-//		new Controller().ex_test();
-//		new Controller().checkStrLower();
-//		new Controller().checkStrNumber();
-//		new Controller().startprint();
-//		new Controller().RpsGame();
-		new Controller().bbGame();
+//		new Controller2().calcGrade();
+//		new Controller2().inputMsgPrint();
+//		new Controller2().calcInputNum();
+//		new Controller2().checkNumber();
+//		new Controller2().amdinCheck();
+//		new Controller2().checkAgeEnroll();
+//		new Controller2().printMessage();
+//		new Controller2().caseTest();
+//		new Controller2().ex_test();
+//		new Controller2().checkStrLower();
+//		new Controller2().checkStrNumber();
+//		new Controller2().startprint();
+//		new Controller2().RpsGame();
+		new Controller2().bbGame();
 		
 		
 		

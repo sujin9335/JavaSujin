@@ -495,7 +495,6 @@ public class Controller {
 			strike++;
 			if(input1==random10||input1==random100) {
 				ball--; //중복 ball 값 처리 
-				
 			}
 		}
 		if(input10==random10) {
