@@ -198,20 +198,23 @@ public class Controller2 {
 		
 		System.out.println("메뉴 선택: ");
 		int menu=sc.nextInt();
+		String chMenu=" ";
+		int price=0;
 		
 		switch(menu) {
 			case 1 : 
-				System.out.println("떡볶이를 선택하셨습니다 3천원입니다");
-				System.out.print("몇개 주문하시겠습니까? :");
-				int su=sc.nextInt();
-				System.out.printf("떡볶이 "+su+"개 "+su*3000+"원 입니다 ");
+				chMenu="떡볶이";
+				price=3000;
 				break;
 				
 				
 				
 		}
-				
-		
+		System.out.printf("%s 선택하셨습니다 가격은 %d 입니다", chMenu,price);
+		System.out.print("\n몇개 주문하시겠습니까 : ");
+		int chNum=sc.nextInt();
+		int chPrice=chNum*price;
+		System.out.printf("떡볶이 %d개 %d원 입니다", chNum,chPrice);
 		
 		
 		
@@ -440,6 +443,49 @@ public class Controller2 {
 		
 		
 		System.out.println("스트라이크 : "+strike+" 볼 : "+ball);
+		
+		
+	}
+	public void array() {
+		//저장된 학생 중 박씨성을 가진 학생 조회하기
+		String[] names3= {"이동명","윤주","김태훈","오윤재","최이경","김수진","박세현","박보검","박상민"};
+		
+		String total=" ";
+		int count=0;
+		for(int i=0; i<names3.length; i++) {
+			char a=names3[i].charAt(0);
+			if(a=='박') {
+				total+=names3[i];
+				count++;
+			}
+		}
+		System.out.println(count+total);	
+				
+		//대문자와 소문자의 갯수를 구하시오
+				
+		int count1=0;	
+		int count2=0;	
+		char[] alpha2= {'a','b','D','E','T','s','y','U','h'};
+		
+		for(int i=0; i<alpha2.length; i++) {
+			if(alpha2[i]>='a'&&alpha2[i]<='z') {
+				count1++;
+			}
+			if(alpha2[i]>='A'&&alpha2[i]<='Z') {
+				count2++;
+			}
+			
+		}
+		System.out.println(count1+" "+count2);
+	
+		
+		int[] test= {1,2,3,4,5};
+		
+		int[] test1=new int[10];
+		int[] test2;
+		test2=new int[] {1,2,4,5,6};
+		
+		
 		
 		
 	}

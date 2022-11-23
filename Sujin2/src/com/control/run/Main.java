@@ -1,6 +1,7 @@
 package com.control.run;
 import com.control.controller.Controller;
 import com.control.controller.Controller2;
+import com.control.controller.Controller3;
 public class Main {
 	public static void main(String[] args) {
 //		new Controller2().calcGrade();
@@ -16,7 +17,9 @@ public class Main {
 //		new Controller2().checkStrNumber();
 //		new Controller2().startprint();
 //		new Controller2().RpsGame();
-		new Controller2().bbGame();
+//		new Controller2().bbGame();
+//		new Controller3().array();
+		new Controller3().upDown();
 		
 		
 		
